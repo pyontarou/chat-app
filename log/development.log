@@ -27,3 +27,14 @@ Entrypoint application = js/application-c229f7c7014cf8c8d494.js js/application-c
 Completed 200 OK in 5375ms (Views: 5367.7ms | ActiveRecord: 0.0ms | Allocations: 1506683)
 
 
+Started GET "/" for ::1 at 2021-02-01 16:46:39 +0900
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/_side_bar.html.erb (Duration: 0.6ms | Allocations: 86)
+  Rendered messages/_main_chat.html.erb (Duration: 0.3ms | Allocations: 82)
+  Rendered messages/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 716)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.0ms | Allocations: 8479)
+
+
