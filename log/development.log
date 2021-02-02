@@ -2287,3 +2287,56 @@ Processing by MessagesController#index as HTML
 Completed 200 OK in 30ms (Views: 26.3ms | ActiveRecord: 0.7ms | Allocations: 8716)
 
 
+Started GET "/" for ::1 at 2021-02-02 19:52:45 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (4.4ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 14.5ms | Allocations: 9498)
+  Rendered messages/_main_chat.html.erb (Duration: 0.4ms | Allocations: 136)
+  Rendered messages/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 10171)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 20.0ms | ActiveRecord: 5.0ms | Allocations: 26258)
+
+
+Started GET "/" for ::1 at 2021-02-02 19:58:01 +0900
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:12
+  Rendered messages/_side_bar.html.erb (Duration: 30.6ms | Allocations: 11493)
+  Rendered messages/_main_chat.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered messages/index.html.erb within layouts/application (Duration: 32.6ms | Allocations: 12304)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 663ms (Views: 633.9ms | ActiveRecord: 9.6ms | Allocations: 1498184)
+
+
+Started GET "/" for ::1 at 2021-02-02 19:58:40 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 1.3ms | Allocations: 1289)
+  Rendered messages/_main_chat.html.erb (Duration: 0.2ms | Allocations: 136)
+  Rendered messages/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1965)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.6ms | Allocations: 11413)
+
+
+Started GET "/rooms/new" for ::1 at 2021-02-02 19:58:41 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering rooms/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` != 1[0m
+  ↳ app/views/rooms/new.html.erb:21
+  Rendered rooms/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 4007)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.8ms | Allocations: 13059)
+
+
