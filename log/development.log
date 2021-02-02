@@ -1397,3 +1397,107 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 22ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 9435)
 
 
+Started GET "/" for ::1 at 2021-02-02 12:18:44 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+SyntaxError (/Users/hirose/projects/chat-app/app/controllers/application_controller.rb:11: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/application_controller.rb:11: syntax error, unexpected end-of-input, expecting end
+app/controllers/application_controller.rb:11: syntax error, unexpected end-of-input, expecting end
+app/controllers/application_controller.rb:11: syntax error, unexpected end-of-input, expecting end
+app/controllers/messages_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2021-02-02 12:19:49 +0900
+Started GET "/" for ::1 at 2021-02-02 12:28:27 +0900
+  [1m[35m (9.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by MessagesController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 1483)
+
+
+Started GET "/" for ::1 at 2021-02-02 12:28:27 +0900
+Started GET "/users/sign_in" for ::1 at 2021-02-02 12:28:27 +0900
+Processing by MessagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 524)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/hirose/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 640)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2601)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 802ms (Views: 781.4ms | ActiveRecord: 10.4ms | Allocations: 1483423)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-02-02 12:28:28 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/hirose/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 151)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 812)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 7212)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-02-02 12:28:59 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"7WcEr+n1IEGAV/ko5zMoJq9C1ZZE6jYfHjmCFFuHFuDmjM4sb3F3fMh3D8a/U9ACWLAf69dc6CWn6HMociOmWQ==", "user"=>{"email"=>"yamato@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (5.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = 'yamato@gmail.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 13ms (ActiveRecord: 5.9ms | Allocations: 2849)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"7WcEr+n1IEGAV/ko5zMoJq9C1ZZE6jYfHjmCFFuHFuDmjM4sb3F3fMh3D8a/U9ACWLAf69dc6CWn6HMociOmWQ==", "user"=>{"email"=>"yamato@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/hirose/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/devise-4.7.3/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 141)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 999)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 309ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 13742)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-02-02 12:29:03 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+DEPRECATION WARNING: [Devise] `DeviseHelper#devise_error_messages!` is deprecated and will be
+removed in the next major version.
+
+Devise now uses a partial under "devise/shared/error_messages" to display
+error messages by default, and make them easier to customize. Update your
+views changing calls from:
+
+    <%= devise_error_messages! %>
+
+to:
+
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+To start customizing how errors are displayed, you can copy the partial
+from devise to your `app/views` folder. Alternatively, you can run
+`rails g devise:views` which will copy all of them again to your app.
+ (called from block in _app_views_devise_registrations_new_html_erb__2737696908219440365_70136769230580 at /Users/hirose/projects/chat-app/app/views/devise/registrations/new.html.erb:9)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1697)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 8749)
+
+
+Started POST "/users" for ::1 at 2021-02-02 12:29:42 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"mhI0RthYem+/cH7IoFIVXVrXZrOA7g4tKNtBR3wW/oSg6GNuF5MkuUMswpbonsugknhuGTB+5o3OIIW1g+OL0Q==", "user"=>{"name"=>"yamato", "email"=>"yamato@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Account"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'yamato@gmail.com' LIMIT 1[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO `users` (`name`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('yamato', 'yamato@gmail.com', '$2a$12$wU8umksXne9TUKy9Y5JVQOGjhDdHUXVdWDtmJRowsC20vGhU6LEB2', '2021-02-02 03:29:42.346027', '2021-02-02 03:29:42.346027')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 315ms (ActiveRecord: 5.7ms | Allocations: 11025)
+
+
+Started GET "/" for ::1 at 2021-02-02 12:29:42 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/_side_bar.html.erb (Duration: 0.3ms | Allocations: 104)
+  Rendered messages/_main_chat.html.erb (Duration: 0.2ms | Allocations: 139)
+  Rendered messages/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 790)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 1.0ms | Allocations: 9050)
+
+
