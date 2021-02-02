@@ -2017,3 +2017,273 @@ Processing by RoomsController#new as HTML
 Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 1.0ms | Allocations: 11112)
 
 
+Started POST "/rooms" for ::1 at 2021-02-02 18:21:55 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+SyntaxError (/Users/hirose/projects/chat-app/app/controllers/rooms_controller.rb:8: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/rooms_controller.rb:8: syntax error, unexpected end-of-input, expecting end
+app/controllers/rooms_controller.rb:8: syntax error, unexpected end-of-input, expecting end
+app/controllers/rooms_controller.rb:8: syntax error, unexpected end-of-input, expecting end
+Started GET "/" for ::1 at 2021-02-02 18:55:36 +0900
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/_side_bar.html.erb (Duration: 0.5ms | Allocations: 210)
+  Rendered messages/_main_chat.html.erb (Duration: 0.2ms | Allocations: 139)
+  Rendered messages/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1016)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 609ms (Views: 593.6ms | ActiveRecord: 3.0ms | Allocations: 1487255)
+
+
+Started GET "/" for ::1 at 2021-02-02 18:55:49 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/_side_bar.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered messages/_main_chat.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 204)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.5ms | Allocations: 8634)
+
+
+Started GET "/" for ::1 at 2021-02-02 18:55:52 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/_side_bar.html.erb (Duration: 0.1ms | Allocations: 56)
+  Rendered messages/_main_chat.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 198)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 8617)
+
+
+Started GET "/" for ::1 at 2021-02-02 18:55:55 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/_side_bar.html.erb (Duration: 0.1ms | Allocations: 56)
+  Rendered messages/_main_chat.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 198)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 1.2ms | Allocations: 8625)
+
+
+Started GET "/users/1/edit" for ::1 at 2021-02-02 18:55:57 +0900
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.6ms | Allocations: 3410)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.5ms | Allocations: 12464)
+
+
+Started PATCH "/users/1" for ::1 at 2021-02-02 18:56:00 +0900
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"4idNZHFGtpmteYYArbE6j7nWa9qcxIqyg6Iz82R3T0IFerMp77BRP4kB/LoB0ekgPOLABhogamYc7/PYxr8DMQ==", "user"=>{"name"=>"yamato", "email"=>"yamato@gmail.com"}, "commit"=>"Update", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms | Allocations: 2869)
+
+
+Started GET "/" for ::1 at 2021-02-02 18:56:00 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/_side_bar.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered messages/_main_chat.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 203)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.4ms | Allocations: 8614)
+
+
+Started GET "/rooms/new" for ::1 at 2021-02-02 18:56:34 +0900
+  
+SyntaxError (/Users/hirose/projects/chat-app/app/controllers/rooms_controller.rb:18: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/rooms_controller.rb:18: syntax error, unexpected end-of-input, expecting end
+app/controllers/rooms_controller.rb:18: syntax error, unexpected end-of-input, expecting end
+app/controllers/rooms_controller.rb:18: syntax error, unexpected end-of-input, expecting end
+Started GET "/rooms/new" for ::1 at 2021-02-02 18:57:02 +0900
+  
+SyntaxError (/Users/hirose/projects/chat-app/app/controllers/rooms_controller.rb:19: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/rooms_controller.rb:19: syntax error, unexpected end-of-input, expecting end
+app/controllers/rooms_controller.rb:19: syntax error, unexpected end-of-input, expecting end
+app/controllers/rooms_controller.rb:19: syntax error, unexpected end-of-input, expecting end
+Started GET "/rooms/new" for ::1 at 2021-02-02 18:57:35 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering rooms/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` != 1[0m
+  ↳ app/views/rooms/new.html.erb:21
+  Rendered rooms/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1851)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 8.9ms | ActiveRecord: 5.6ms | Allocations: 21405)
+
+
+Started GET "/rooms/new" for ::1 at 2021-02-02 18:57:36 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering rooms/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` != 1[0m
+  ↳ app/views/rooms/new.html.erb:21
+  Rendered rooms/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1431)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 5.8ms | ActiveRecord: 5.5ms | Allocations: 20394)
+
+
+Started POST "/rooms" for ::1 at 2021-02-02 18:57:47 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"tqLE8D14tBt1AQ9GkKHbS0mxv/dCVPuaWeaU5UnQ9slPQ/84fjwrUuFRGd90EnlzMOuKcnPDABb9dUOCiNK1vQ==", "room"=>{"name"=>"新規チャット", "user_ides"=>["2"], "user_ids"=>["1"]}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[31mUnpermitted parameter: :user_ides[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/rooms_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 3.5ms | Allocations: 8398)
+
+
+  
+ActiveRecord::HasManyThroughCantAssociateThroughHasOneOrManyReflection (Cannot modify association 'Room#users' because the source reflection class 'User' is associated to 'RoomUser' via :has_many.):
+  
+app/controllers/rooms_controller.rb:7:in `create'
+Started GET "/" for ::1 at 2021-02-02 18:59:56 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/_side_bar.html.erb (Duration: 0.1ms | Allocations: 66)
+  Rendered messages/_main_chat.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 207)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 7.1ms | ActiveRecord: 3.7ms | Allocations: 15471)
+
+
+Started POST "/rooms" for ::1 at 2021-02-02 19:00:02 +0900
+  
+SyntaxError (/Users/hirose/projects/chat-app/app/controllers/rooms_controller.rb:18: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/rooms_controller.rb:18: syntax error, unexpected end, expecting end-of-input
+app/controllers/rooms_controller.rb:18: syntax error, unexpected end, expecting end-of-input
+app/controllers/rooms_controller.rb:18: syntax error, unexpected end, expecting end-of-input
+Started POST "/rooms" for ::1 at 2021-02-02 19:00:58 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"tqLE8D14tBt1AQ9GkKHbS0mxv/dCVPuaWeaU5UnQ9slPQ/84fjwrUuFRGd90EnlzMOuKcnPDABb9dUOCiNK1vQ==", "room"=>{"name"=>"新規チャット", "user_ides"=>["2"], "user_ids"=>["1"]}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[31mUnpermitted parameter: :user_ides[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/rooms_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 8.2ms | Allocations: 16749)
+
+
+  
+ActiveRecord::HasManyThroughCantAssociateThroughHasOneOrManyReflection (Cannot modify association 'Room#users' because the source reflection class 'User' is associated to 'RoomUser' via :has_many.):
+  
+app/controllers/rooms_controller.rb:7:in `create'
+Started POST "/rooms" for ::1 at 2021-02-02 19:04:07 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"tqLE8D14tBt1AQ9GkKHbS0mxv/dCVPuaWeaU5UnQ9slPQ/84fjwrUuFRGd90EnlzMOuKcnPDABb9dUOCiNK1vQ==", "room"=>{"name"=>"新規チャット", "user_ides"=>["2"], "user_ids"=>["1"]}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[31mUnpermitted parameter: :user_ides[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/rooms_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 17.7ms | Allocations: 16745)
+
+
+  
+ActiveRecord::HasManyThroughCantAssociateThroughHasOneOrManyReflection (Cannot modify association 'Room#users' because the source reflection class 'User' is associated to 'RoomUser' via :has_many.):
+  
+app/controllers/rooms_controller.rb:7:in `create'
+Started POST "/rooms" for ::1 at 2021-02-02 19:04:12 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"tqLE8D14tBt1AQ9GkKHbS0mxv/dCVPuaWeaU5UnQ9slPQ/84fjwrUuFRGd90EnlzMOuKcnPDABb9dUOCiNK1vQ==", "room"=>{"name"=>"新規チャット", "user_ides"=>["2"], "user_ids"=>["1"]}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[31mUnpermitted parameter: :user_ides[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/rooms_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.0ms | Allocations: 3654)
+
+
+  
+ActiveRecord::HasManyThroughCantAssociateThroughHasOneOrManyReflection (Cannot modify association 'Room#users' because the source reflection class 'User' is associated to 'RoomUser' via :has_many.):
+  
+app/controllers/rooms_controller.rb:7:in `create'
+Started POST "/rooms" for ::1 at 2021-02-02 19:14:19 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"tqLE8D14tBt1AQ9GkKHbS0mxv/dCVPuaWeaU5UnQ9slPQ/84fjwrUuFRGd90EnlzMOuKcnPDABb9dUOCiNK1vQ==", "room"=>{"name"=>"新規チャット", "user_ides"=>["2"], "user_ids"=>["1"]}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[31mUnpermitted parameter: :user_ides[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/rooms_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms | Allocations: 3650)
+
+
+  
+ActiveRecord::HasManyThroughCantAssociateThroughHasOneOrManyReflection (Cannot modify association 'Room#users' because the source reflection class 'User' is associated to 'RoomUser' via :has_many.):
+  
+app/controllers/rooms_controller.rb:7:in `create'
+Started POST "/rooms" for ::1 at 2021-02-02 19:27:36 +0900
+  [1m[35m (1.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"tqLE8D14tBt1AQ9GkKHbS0mxv/dCVPuaWeaU5UnQ9slPQ/84fjwrUuFRGd90EnlzMOuKcnPDABb9dUOCiNK1vQ==", "room"=>{"name"=>"新規チャット", "user_ides"=>["2"], "user_ids"=>["1"]}, "commit"=>"Create Room"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[31mUnpermitted parameter: :user_ides[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/rooms_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.3ms | Allocations: 16210)
+
+
+  
+ActiveRecord::HasManyThroughCantAssociateThroughHasOneOrManyReflection (Cannot modify association 'Room#users' because the source reflection class 'User' is associated to 'RoomUser' via :has_many.):
+  
+app/controllers/rooms_controller.rb:7:in `create'
+Started POST "/rooms" for ::1 at 2021-02-02 19:27:42 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"tqLE8D14tBt1AQ9GkKHbS0mxv/dCVPuaWeaU5UnQ9slPQ/84fjwrUuFRGd90EnlzMOuKcnPDABb9dUOCiNK1vQ==", "room"=>{"name"=>"新規チャット", "user_ides"=>["2"], "user_ids"=>["1"]}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[31mUnpermitted parameter: :user_ides[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/rooms_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.6ms | Allocations: 3650)
+
+
+  
+ActiveRecord::HasManyThroughCantAssociateThroughHasOneOrManyReflection (Cannot modify association 'Room#users' because the source reflection class 'User' is associated to 'RoomUser' via :has_many.):
+  
+app/controllers/rooms_controller.rb:7:in `create'
+Started POST "/rooms" for ::1 at 2021-02-02 19:29:53 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"tqLE8D14tBt1AQ9GkKHbS0mxv/dCVPuaWeaU5UnQ9slPQ/84fjwrUuFRGd90EnlzMOuKcnPDABb9dUOCiNK1vQ==", "room"=>{"name"=>"新規チャット", "user_ides"=>["2"], "user_ids"=>["1"]}, "commit"=>"Create Room"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[31mUnpermitted parameter: :user_ides[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/rooms_controller.rb:7:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/rooms_controller.rb:8:in `create'
+  [1m[36mRoom Create (0.4ms)[0m  [1m[32mINSERT INTO `rooms` (`name`, `created_at`, `updated_at`) VALUES ('新規チャット', '2021-02-02 10:29:53.462108', '2021-02-02 10:29:53.462108')[0m
+  ↳ app/controllers/rooms_controller.rb:8:in `create'
+  [1m[36mRoomUser Create (0.5ms)[0m  [1m[32mINSERT INTO `room_users` (`room_id`, `user_id`, `created_at`, `updated_at`) VALUES (1, 1, '2021-02-02 10:29:53.465358', '2021-02-02 10:29:53.465358')[0m
+  ↳ app/controllers/rooms_controller.rb:8:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/rooms_controller.rb:8:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 64ms (ActiveRecord: 18.5ms | Allocations: 34515)
+
+
+Started GET "/" for ::1 at 2021-02-02 19:29:53 +0900
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/_side_bar.html.erb (Duration: 0.2ms | Allocations: 65)
+  Rendered messages/_main_chat.html.erb (Duration: 0.0ms | Allocations: 5)
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 206)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 26.3ms | ActiveRecord: 0.7ms | Allocations: 8716)
+
+
