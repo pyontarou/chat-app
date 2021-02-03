@@ -3401,3 +3401,476 @@ Processing by RoomsController#index as HTML
 Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.6ms | Allocations: 9657)
 
 
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT GET_LOCK('8617640504667222525', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateActiveStorageTables (20210203023738)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT @@innodb_file_per_table = 1 AND @@innodb_file_format = 'Barracuda'[0m
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE TABLE `active_storage_blobs` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `key` varchar(255) NOT NULL, `filename` varchar(255) NOT NULL, `content_type` varchar(255), `metadata` text, `byte_size` bigint NOT NULL, `checksum` varchar(255) NOT NULL, `created_at` datetime NOT NULL, UNIQUE INDEX `index_active_storage_blobs_on_key`  (`key`))[0m
+  [1m[35m (25.6ms)[0m  [1m[35mCREATE TABLE `active_storage_attachments` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255) NOT NULL, `record_type` varchar(255) NOT NULL, `record_id` bigint NOT NULL, `blob_id` bigint NOT NULL, `created_at` datetime NOT NULL,  INDEX `index_active_storage_attachments_on_blob_id`  (`blob_id`), UNIQUE INDEX `index_active_storage_attachments_uniqueness`  (`record_type`, `record_id`, `name`, `blob_id`), CONSTRAINT `fk_rails_c3b3935057`
+FOREIGN KEY (`blob_id`)
+  REFERENCES `active_storage_blobs` (`id`)
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210203023738')[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('8617640504667222525')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/rooms/2/messages" for ::1 at 2021-02-03 11:55:16 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"room_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 19.7ms | Allocations: 5857)
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  Rendered collection of messages/_message.html.erb [2 times] (Duration: 8.8ms | Allocations: 4851)
+  Rendered messages/_main_chat.html.erb (Duration: 15.4ms | Allocations: 10206)
+  Rendered messages/index.html.erb within layouts/application (Duration: 36.1ms | Allocations: 16731)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 711ms (Views: 651.8ms | ActiveRecord: 16.5ms | Allocations: 1522521)
+
+
+Started POST "/rooms/2/messages" for ::1 at 2021-02-03 11:56:11 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"NuvgUHQnclGtk+OTVyQ51gGc/H9iGrbM0A+SjfhsgAzPCtuYN2PtGDnD9Qqzl5vueMbJ+lONTUB0nEXqOW7DeA==", "message"=>{"content"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc56b0d7c48 @tempfile=#<Tempfile:/var/folders/v5/jq4jjzss0vn1j0c6g27n6hpw0000gn/T/RackMultipart20210203-33371-ay1k8y.jpg>, @original_filename="20210114_213651_076.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"message[image]\"; filename=\"20210114_213651_076.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"送信", "room_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 1.2ms | Allocations: 1151)
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  Rendered collection of messages/_message.html.erb [2 times] (Duration: 1.7ms | Allocations: 2192)
+  Rendered messages/_main_chat.html.erb (Duration: 3.7ms | Allocations: 4623)
+  Rendered messages/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 5911)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 10.2ms | ActiveRecord: 2.2ms | Allocations: 21248)
+
+
+Started POST "/rooms/2/messages" for ::1 at 2021-02-03 11:56:51 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"B13HwDhN6ZQkCSIa29bQGUaQMlmk/JNV/PGNSOuYaz/+vPwIewl23bBZNIM/ZXIhP8oH3JVraNlYYlovKpooSw==", "message"=>{"content"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc569967518 @tempfile=#<Tempfile:/var/folders/v5/jq4jjzss0vn1j0c6g27n6hpw0000gn/T/RackMultipart20210203-33371-x6zhbb.jpg>, @original_filename="20210114_213651_076.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"message[image]\"; filename=\"20210114_213651_076.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"送信", "room_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 1.2ms | Allocations: 1143)
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  Rendered collection of messages/_message.html.erb [2 times] (Duration: 1.7ms | Allocations: 2192)
+  Rendered messages/_main_chat.html.erb (Duration: 3.8ms | Allocations: 4617)
+  Rendered messages/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 5897)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 1.9ms | Allocations: 18749)
+
+
+Started GET "/rooms/2/messages" for ::1 at 2021-02-03 11:56:56 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"room_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 1.0ms | Allocations: 1159)
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  Rendered collection of messages/_message.html.erb [2 times] (Duration: 1.7ms | Allocations: 2193)
+  Rendered messages/_main_chat.html.erb (Duration: 3.6ms | Allocations: 4622)
+  Rendered messages/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 5918)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 1.7ms | Allocations: 15126)
+
+
+Started GET "/rooms/2/messages" for ::1 at 2021-02-03 11:57:36 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"room_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 1.6ms | Allocations: 1352)
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  Rendered collection of messages/_message.html.erb [2 times] (Duration: 2.1ms | Allocations: 2363)
+  Rendered messages/_main_chat.html.erb (Duration: 5.1ms | Allocations: 5169)
+  Rendered messages/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 7061)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 1.8ms | Allocations: 17284)
+
+
+Started POST "/rooms/2/messages" for ::1 at 2021-02-03 11:57:44 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"6N8NCukuN6lzQax34XSguzh4PNys/LvioTGLzB3AzxERPjbCqmqo4OcRuu4FxwKDQSIJWZ1rQG4Folyr3MKMZQ==", "message"=>{"content"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc56b376508 @tempfile=#<Tempfile:/var/folders/v5/jq4jjzss0vn1j0c6g27n6hpw0000gn/T/RackMultipart20210203-33371-zem285.jpg>, @original_filename="20210114_213651_076.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"message[image]\"; filename=\"20210114_213651_076.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"送信", "room_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 1.2ms | Allocations: 1151)
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  Rendered collection of messages/_message.html.erb [2 times] (Duration: 1.6ms | Allocations: 2188)
+  Rendered messages/_main_chat.html.erb (Duration: 3.4ms | Allocations: 4614)
+  Rendered messages/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 5901)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 8.3ms | ActiveRecord: 1.6ms | Allocations: 18731)
+
+
+Started POST "/rooms/2/messages" for ::1 at 2021-02-03 12:06:57 +0900
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"MownT7cDDTJywHtWtrhv59f6QPvj0KcpQFqQ9bTBzcPLbRyH9EeSe+aQbc9SC83frqB1ftJHXKXkyUeSdcOOtw==", "message"=>{"content"=>""}, "commit"=>"送信", "room_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:9:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 2.7ms | Allocations: 4431)
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  Rendered collection of messages/_message.html.erb [2 times] (Duration: 3.4ms | Allocations: 3890)
+  Rendered messages/_main_chat.html.erb (Duration: 5.6ms | Allocations: 6376)
+  Rendered messages/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 10943)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 13.2ms | ActiveRecord: 3.3ms | Allocations: 41362)
+
+
+Started POST "/rooms/2/messages" for ::1 at 2021-02-03 12:07:12 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"/pX4oAc7rZashbazb8qP0zJtQqEQ3jfrSddB7EIVfPUHdMNoRH8y3zjVoCqLeS3rSzd3JCFJzGftRJaLgxc/gQ==", "message"=>{"content"=>"こんにちは", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc599332898 @tempfile=#<Tempfile:/var/folders/v5/jq4jjzss0vn1j0c6g27n6hpw0000gn/T/RackMultipart20210203-33371-1mk4mz5.JPG>, @original_filename="DSC_0545.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"message[image]\"; filename=\"DSC_0545.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"送信", "room_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `room_id`, `user_id`, `created_at`, `updated_at`) VALUES ('こんにちは', 2, 1, '2021-02-03 03:07:12.989622', '2021-02-03 03:07:12.989622')[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` INNER JOIN `active_storage_attachments` ON `active_storage_blobs`.`id` = `active_storage_attachments`.`blob_id` WHERE `active_storage_attachments`.`record_id` = 3 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 3 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mActiveStorage::Blob Create (2.9ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('s7ylngvga1l7ftwvkoee2t5ff437', 'DSC_0545.JPG', 'image/jpeg', '{\"identified\":true}', 5705502, 'D2vb0H0KtKiX59cdZFiamw==', '2021-02-03 03:07:13')[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO `active_storage_attachments` (`name`, `record_type`, `record_id`, `blob_id`, `created_at`) VALUES ('image', 'Message', 3, 1, '2021-02-03 03:07:13')[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mMessage Update (1.0ms)[0m  [1m[33mUPDATE `messages` SET `messages`.`updated_at` = '2021-02-03 03:07:13.059525' WHERE `messages`.`id` = 3[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+[36m  Disk Storage (15.4ms) [0m[32mUploaded file to key: s7ylngvga1l7ftwvkoee2t5ff437 (checksum: D2vb0H0KtKiX59cdZFiamw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 7f87223b-5667-43b2-9520-360731846c65) to Async(active_storage_analysis) with arguments: #<GlobalID:0x00007fc56ab47a30 @uri=#<URI::GID gid://chat-app/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/rooms/2/messages
+Completed 302 Found in 107ms (ActiveRecord: 11.0ms | Allocations: 73444)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Started GET "/rooms/2/messages" for ::1 at 2021-02-03 12:07:13 +0900
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f87223b-5667-43b2-9520-360731846c65] Performing ActiveStorage::AnalyzeJob (Job ID: 7f87223b-5667-43b2-9520-360731846c65) from Async(active_storage_analysis) enqueued at 2021-02-03T03:07:13Z with arguments: #<GlobalID:0x00007fc56abac188 @uri=#<URI::GID gid://chat-app/ActiveStorage::Blob/1>>
+Processing by MessagesController#index as HTML
+  Parameters: {"room_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (10.1ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  Rendering messages/index.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f87223b-5667-43b2-9520-360731846c65] [36m  Disk Storage (13.9ms) [0m[34mDownloaded file from key: s7ylngvga1l7ftwvkoee2t5ff437[0m
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 1.9ms | Allocations: 1161)
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 3 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  Rendered collection of messages/_message.html.erb [3 times] (Duration: 4.9ms | Allocations: 4741)
+  Rendered messages/_main_chat.html.erb (Duration: 7.6ms | Allocations: 7187)
+  Rendered messages/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 8484)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 15.2ms | ActiveRecord: 13.0ms | Allocations: 17687)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e02b69c053b3751b5e44e9aefa12480de8acad4d/DSC_0545.JPG" for ::1 at 2021-02-03 12:07:13 +0900
+Processing by ActiveStorage::BlobsController#show as 
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e02b69c053b3751b5e44e9aefa12480de8acad4d", "filename"=>"DSC_0545"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 1 LIMIT 1[0m
+[36m  Disk Storage (1.8ms) [0m[34mGenerated URL for file at key: s7ylngvga1l7ftwvkoee2t5ff437 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhjemQ1Ykc1bmRtZGhNV3czWm5SM2RtdHZaV1V5ZERWbVpqUXpOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtSVFExOHdOVFExTGtwUVJ5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25SRk5EWHpBMU5EVXVTbEJIQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMi0wM1QwMzoxMjoxMy4xNjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--0caccaa1df02bacfdee37493ecf2170e47454db6/DSC_0545.JPG?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22DSC_0545.JPG%22%3B+filename%2A%3DUTF-8%27%27DSC_0545.JPG)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhjemQ1Ykc1bmRtZGhNV3czWm5SM2RtdHZaV1V5ZERWbVpqUXpOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtSVFExOHdOVFExTGtwUVJ5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25SRk5EWHpBMU5EVXVTbEJIQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMi0wM1QwMzoxMjoxMy4xNjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--0caccaa1df02bacfdee37493ecf2170e47454db6/DSC_0545.JPG?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22DSC_0545.JPG%22%3B+filename%2A%3DUTF-8%27%27DSC_0545.JPG
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms | Allocations: 2596)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhjemQ1Ykc1bmRtZGhNV3czWm5SM2RtdHZaV1V5ZERWbVpqUXpOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtSVFExOHdOVFExTGtwUVJ5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25SRk5EWHpBMU5EVXVTbEJIQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMi0wM1QwMzoxMjoxMy4xNjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--0caccaa1df02bacfdee37493ecf2170e47454db6/DSC_0545.JPG?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22DSC_0545.JPG%22%3B+filename%2A%3DUTF-8%27%27DSC_0545.JPG" for ::1 at 2021-02-03 12:07:13 +0900
+Processing by ActiveStorage::DiskController#show as 
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"DSC_0545.JPG\"; filename*=UTF-8''DSC_0545.JPG", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSWhjemQ1Ykc1bmRtZGhNV3czWm5SM2RtdHZaV1V5ZERWbVpqUXpOd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUTJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWtSVFExOHdOVFExTGtwUVJ5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25SRk5EWHpBMU5EVXVTbEJIQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJUGFXMWhaMlV2YW5CbFp3WTdCbFE9IiwiZXhwIjoiMjAyMS0wMi0wM1QwMzoxMjoxMy4xNjJaIiwicHVyIjoiYmxvYl9rZXkifX0=--0caccaa1df02bacfdee37493ecf2170e47454db6", "filename"=>"DSC_0545"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 654)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f87223b-5667-43b2-9520-360731846c65]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f87223b-5667-43b2-9520-360731846c65]   [1m[36mActiveStorage::Blob Update (5.8ms)[0m  [1m[33mUPDATE `active_storage_blobs` SET `active_storage_blobs`.`metadata` = '{\"identified\":true,\"width\":3096,\"height\":5504,\"analyzed\":true}' WHERE `active_storage_blobs`.`id` = 1[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f87223b-5667-43b2-9520-360731846c65]   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7f87223b-5667-43b2-9520-360731846c65] Performed ActiveStorage::AnalyzeJob (Job ID: 7f87223b-5667-43b2-9520-360731846c65) from Async(active_storage_analysis) in 2165.56ms
+Started GET "/rooms/2/messages" for ::1 at 2021-02-03 12:11:12 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"room_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 1.7ms | Allocations: 1352)
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 3 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  Rendered collection of messages/_message.html.erb [3 times] (Duration: 10.4ms | Allocations: 7754)
+  Rendered messages/_main_chat.html.erb (Duration: 13.0ms | Allocations: 10575)
+  Rendered messages/index.html.erb within layouts/application (Duration: 15.9ms | Allocations: 12466)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 19.5ms | ActiveRecord: 2.4ms | Allocations: 22582)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e02b69c053b3751b5e44e9aefa12480de8acad4d/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTlRBd2VEVXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--67942f26197deafd04a5b1fc537999c54322cf10/DSC_0545.JPG" for ::1 at 2021-02-03 12:11:12 +0900
+Processing by ActiveStorage::RepresentationsController#show as 
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e02b69c053b3751b5e44e9aefa12480de8acad4d", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTlRBd2VEVXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--67942f26197deafd04a5b1fc537999c54322cf10", "filename"=>"DSC_0545"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 1 LIMIT 1[0m
+[36m  Disk Storage (0.0ms) [0m[34mChecked if file exists at key: variants/s7ylngvga1l7ftwvkoee2t5ff437/70c0755c1c91220ffcd22a58068c6d7d59062c9e5a8fe832b6503da60586bda8 (no)[0m
+[36m  Disk Storage (3.0ms) [0m[34mDownloaded file from key: s7ylngvga1l7ftwvkoee2t5ff437[0m
+[36m  Disk Storage (1.0ms) [0m[32mUploaded file to key: variants/s7ylngvga1l7ftwvkoee2t5ff437/70c0755c1c91220ffcd22a58068c6d7d59062c9e5a8fe832b6503da60586bda8[0m
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: variants/s7ylngvga1l7ftwvkoee2t5ff437/70c0755c1c91220ffcd22a58068c6d7d59062c9e5a8fe832b6503da60586bda8 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZjemQ1Ykc1bmRtZGhNV3czWm5SM2RtdHZaV1V5ZERWbVpqUXpOeTgzTUdNd056VTFZekZqT1RFeU1qQm1abU5rTWpKaE5UZ3dOamhqTm1RM1pEVTVNRFl5WXpsbE5XRTRabVU0TXpKaU5qVXdNMlJoTmpBMU9EWmlaR0U0QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVJGTkRYekExTkRVdVNsQkhJanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRFVTBOZk1EVTBOUzVLVUVjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDItMDNUMDM6MTY6MTMuNjIxWiIsInB1ciI6ImJsb2Jfa2V5In19--1e6eb5c9adb7de0f6858b1bef9e7f00feea9365d/DSC_0545.JPG?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22DSC_0545.JPG%22%3B+filename%2A%3DUTF-8%27%27DSC_0545.JPG)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZjemQ1Ykc1bmRtZGhNV3czWm5SM2RtdHZaV1V5ZERWbVpqUXpOeTgzTUdNd056VTFZekZqT1RFeU1qQm1abU5rTWpKaE5UZ3dOamhqTm1RM1pEVTVNRFl5WXpsbE5XRTRabVU0TXpKaU5qVXdNMlJoTmpBMU9EWmlaR0U0QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVJGTkRYekExTkRVdVNsQkhJanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRFVTBOZk1EVTBOUzVLVUVjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDItMDNUMDM6MTY6MTMuNjIxWiIsInB1ciI6ImJsb2Jfa2V5In19--1e6eb5c9adb7de0f6858b1bef9e7f00feea9365d/DSC_0545.JPG?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22DSC_0545.JPG%22%3B+filename%2A%3DUTF-8%27%27DSC_0545.JPG
+Completed 302 Found in 619ms (ActiveRecord: 0.5ms | Allocations: 15184)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZjemQ1Ykc1bmRtZGhNV3czWm5SM2RtdHZaV1V5ZERWbVpqUXpOeTgzTUdNd056VTFZekZqT1RFeU1qQm1abU5rTWpKaE5UZ3dOamhqTm1RM1pEVTVNRFl5WXpsbE5XRTRabVU0TXpKaU5qVXdNMlJoTmpBMU9EWmlaR0U0QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVJGTkRYekExTkRVdVNsQkhJanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRFVTBOZk1EVTBOUzVLVUVjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDItMDNUMDM6MTY6MTMuNjIxWiIsInB1ciI6ImJsb2Jfa2V5In19--1e6eb5c9adb7de0f6858b1bef9e7f00feea9365d/DSC_0545.JPG?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22DSC_0545.JPG%22%3B+filename%2A%3DUTF-8%27%27DSC_0545.JPG" for ::1 at 2021-02-03 12:11:13 +0900
+Processing by ActiveStorage::DiskController#show as 
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"DSC_0545.JPG\"; filename*=UTF-8''DSC_0545.JPG", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZjemQ1Ykc1bmRtZGhNV3czWm5SM2RtdHZaV1V5ZERWbVpqUXpOeTgzTUdNd056VTFZekZqT1RFeU1qQm1abU5rTWpKaE5UZ3dOamhqTm1RM1pEVTVNRFl5WXpsbE5XRTRabVU0TXpKaU5qVXdNMlJoTmpBMU9EWmlaR0U0QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVJGTkRYekExTkRVdVNsQkhJanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRFVTBOZk1EVTBOUzVLVUVjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDItMDNUMDM6MTY6MTMuNjIxWiIsInB1ciI6ImJsb2Jfa2V5In19--1e6eb5c9adb7de0f6858b1bef9e7f00feea9365d", "filename"=>"DSC_0545"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 637)
+
+
+Started POST "/rooms/2/messages" for ::1 at 2021-02-03 12:16:20 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"19kPJL+loPOElW8nKqO2/BqiYHIDStJ8cUkBydBMrxEuODTs/OE/uhDFeb7OEBTEY/hV9zLdKfDV2tauEU7sZQ==", "message"=>{"content"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc57c670f90 @tempfile=#<Tempfile:/var/folders/v5/jq4jjzss0vn1j0c6g27n6hpw0000gn/T/RackMultipart20210203-33371-1mc1edu.JPG>, @original_filename="DSC_0545.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"message[image]\"; filename=\"DSC_0545.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"送信", "room_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 9.6ms | Allocations: 26647)
+
+
+  
+NoMethodError (undefined method `was_attached?' for #<Message:0x00007fc569b47810>
+Did you mean?  was_attached):
+  
+app/controllers/messages_controller.rb:11:in `create'
+Started POST "/rooms/2/messages" for ::1 at 2021-02-03 12:18:08 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"authenticity_token"=>"19kPJL+loPOElW8nKqO2/BqiYHIDStJ8cUkBydBMrxEuODTs/OE/uhDFeb7OEBTEY/hV9zLdKfDV2tauEU7sZQ==", "message"=>{"content"=>"", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc569aae5c0 @tempfile=#<Tempfile:/var/folders/v5/jq4jjzss0vn1j0c6g27n6hpw0000gn/T/RackMultipart20210203-33371-efwuz4.JPG>, @original_filename="DSC_0545.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"message[image]\"; filename=\"DSC_0545.JPG\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"送信", "room_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `room_id`, `user_id`, `created_at`, `updated_at`) VALUES ('', 2, 1, '2021-02-03 03:18:09.071300', '2021-02-03 03:18:09.071300')[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 4 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO `active_storage_blobs` (`key`, `filename`, `content_type`, `metadata`, `byte_size`, `checksum`, `created_at`) VALUES ('aqr178hjsfeynvgfvxk4zaufd0k5', 'DSC_0545.JPG', 'image/jpeg', '{\"identified\":true}', 5705502, 'D2vb0H0KtKiX59cdZFiamw==', '2021-02-03 03:18:09')[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.5ms)[0m  [1m[32mINSERT INTO `active_storage_attachments` (`name`, `record_type`, `record_id`, `blob_id`, `created_at`) VALUES ('image', 'Message', 4, 2, '2021-02-03 03:18:09')[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[36mMessage Update (0.4ms)[0m  [1m[33mUPDATE `messages` SET `messages`.`updated_at` = '2021-02-03 03:18:09.076721' WHERE `messages`.`id` = 4[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:11:in `create'
+[36m  Disk Storage (15.8ms) [0m[32mUploaded file to key: aqr178hjsfeynvgfvxk4zaufd0k5 (checksum: D2vb0H0KtKiX59cdZFiamw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: dc722278-9853-43f8-afa3-7e7412c09e70) to Async(active_storage_analysis) with arguments: #<GlobalID:0x00007fc56a9c6788 @uri=#<URI::GID gid://chat-app/ActiveStorage::Blob/2>>
+Redirected to http://localhost:3000/rooms/2/messages
+Completed 302 Found in 80ms (ActiveRecord: 16.5ms | Allocations: 47406)
+
+
+Started GET "/rooms/2/messages" for ::1 at 2021-02-03 12:18:09 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"room_id"=>"2"}
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dc722278-9853-43f8-afa3-7e7412c09e70] Performing ActiveStorage::AnalyzeJob (Job ID: dc722278-9853-43f8-afa3-7e7412c09e70) from Async(active_storage_analysis) enqueued at 2021-02-03T03:18:09Z with arguments: #<GlobalID:0x00007fc56ae16a40 @uri=#<URI::GID gid://chat-app/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dc722278-9853-43f8-afa3-7e7412c09e70] [36m  Disk Storage (5.0ms) [0m[34mDownloaded file from key: aqr178hjsfeynvgfvxk4zaufd0k5[0m
+  [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 5.8ms | Allocations: 4620)
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 1 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 2 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 3 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT `active_storage_attachments`.* FROM `active_storage_attachments` WHERE `active_storage_attachments`.`record_id` = 4 AND `active_storage_attachments`.`record_type` = 'Message' AND `active_storage_attachments`.`name` = 'image' LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/messages/_message.html.erb:19
+  Rendered collection of messages/_message.html.erb [4 times] (Duration: 16.2ms | Allocations: 13864)
+  Rendered messages/_main_chat.html.erb (Duration: 19.5ms | Allocations: 17702)
+  Rendered messages/index.html.erb within layouts/application (Duration: 25.5ms | Allocations: 22458)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 70ms (Views: 33.9ms | ActiveRecord: 19.6ms | Allocations: 56282)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e02b69c053b3751b5e44e9aefa12480de8acad4d/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTlRBd2VEVXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--67942f26197deafd04a5b1fc537999c54322cf10/DSC_0545.JPG" for ::1 at 2021-02-03 12:18:09 +0900
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e1a6de368031486b1efe77c3293078d6bbf19c06/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTlRBd2VEVXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--67942f26197deafd04a5b1fc537999c54322cf10/DSC_0545.JPG" for ::1 at 2021-02-03 12:18:09 +0900
+Processing by ActiveStorage::RepresentationsController#show as 
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e02b69c053b3751b5e44e9aefa12480de8acad4d", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTlRBd2VEVXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--67942f26197deafd04a5b1fc537999c54322cf10", "filename"=>"DSC_0545"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 1 LIMIT 1[0m
+[36m  Disk Storage (0.0ms) [0m[34mChecked if file exists at key: variants/s7ylngvga1l7ftwvkoee2t5ff437/70c0755c1c91220ffcd22a58068c6d7d59062c9e5a8fe832b6503da60586bda8 (yes)[0m
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: variants/s7ylngvga1l7ftwvkoee2t5ff437/70c0755c1c91220ffcd22a58068c6d7d59062c9e5a8fe832b6503da60586bda8 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZjemQ1Ykc1bmRtZGhNV3czWm5SM2RtdHZaV1V5ZERWbVpqUXpOeTgzTUdNd056VTFZekZqT1RFeU1qQm1abU5rTWpKaE5UZ3dOamhqTm1RM1pEVTVNRFl5WXpsbE5XRTRabVU0TXpKaU5qVXdNMlJoTmpBMU9EWmlaR0U0QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVJGTkRYekExTkRVdVNsQkhJanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRFVTBOZk1EVTBOUzVLVUVjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDItMDNUMDM6MjM6MDkuMjMyWiIsInB1ciI6ImJsb2Jfa2V5In19--227416dda27204abcf244b2f4449ee1a4b0f5c97/DSC_0545.JPG?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22DSC_0545.JPG%22%3B+filename%2A%3DUTF-8%27%27DSC_0545.JPG)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZjemQ1Ykc1bmRtZGhNV3czWm5SM2RtdHZaV1V5ZERWbVpqUXpOeTgzTUdNd056VTFZekZqT1RFeU1qQm1abU5rTWpKaE5UZ3dOamhqTm1RM1pEVTVNRFl5WXpsbE5XRTRabVU0TXpKaU5qVXdNMlJoTmpBMU9EWmlaR0U0QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVJGTkRYekExTkRVdVNsQkhJanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRFVTBOZk1EVTBOUzVLVUVjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDItMDNUMDM6MjM6MDkuMjMyWiIsInB1ciI6ImJsb2Jfa2V5In19--227416dda27204abcf244b2f4449ee1a4b0f5c97/DSC_0545.JPG?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22DSC_0545.JPG%22%3B+filename%2A%3DUTF-8%27%27DSC_0545.JPG
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms | Allocations: 3612)
+
+
+Processing by ActiveStorage::RepresentationsController#show as 
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e1a6de368031486b1efe77c3293078d6bbf19c06", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTlRBd2VEVXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--67942f26197deafd04a5b1fc537999c54322cf10", "filename"=>"DSC_0545"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT `active_storage_blobs`.* FROM `active_storage_blobs` WHERE `active_storage_blobs`.`id` = 2 LIMIT 1[0m
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZjemQ1Ykc1bmRtZGhNV3czWm5SM2RtdHZaV1V5ZERWbVpqUXpOeTgzTUdNd056VTFZekZqT1RFeU1qQm1abU5rTWpKaE5UZ3dOamhqTm1RM1pEVTVNRFl5WXpsbE5XRTRabVU0TXpKaU5qVXdNMlJoTmpBMU9EWmlaR0U0QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVJGTkRYekExTkRVdVNsQkhJanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRFVTBOZk1EVTBOUzVLVUVjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDItMDNUMDM6MjM6MDkuMjMyWiIsInB1ciI6ImJsb2Jfa2V5In19--227416dda27204abcf244b2f4449ee1a4b0f5c97/DSC_0545.JPG?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22DSC_0545.JPG%22%3B+filename%2A%3DUTF-8%27%27DSC_0545.JPG" for ::1 at 2021-02-03 12:18:09 +0900
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/aqr178hjsfeynvgfvxk4zaufd0k5/70c0755c1c91220ffcd22a58068c6d7d59062c9e5a8fe832b6503da60586bda8 (no)[0m
+Processing by ActiveStorage::DiskController#show as 
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"DSC_0545.JPG\"; filename*=UTF-8''DSC_0545.JPG", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZjemQ1Ykc1bmRtZGhNV3czWm5SM2RtdHZaV1V5ZERWbVpqUXpOeTgzTUdNd056VTFZekZqT1RFeU1qQm1abU5rTWpKaE5UZ3dOamhqTm1RM1pEVTVNRFl5WXpsbE5XRTRabVU0TXpKaU5qVXdNMlJoTmpBMU9EWmlaR0U0QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVJGTkRYekExTkRVdVNsQkhJanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRFVTBOZk1EVTBOUzVLVUVjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDItMDNUMDM6MjM6MDkuMjMyWiIsInB1ciI6ImJsb2Jfa2V5In19--227416dda27204abcf244b2f4449ee1a4b0f5c97", "filename"=>"DSC_0545"}
+[36m  Disk Storage (39.9ms) [0m[34mDownloaded file from key: aqr178hjsfeynvgfvxk4zaufd0k5[0m
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 709)
+
+
+[36m  Disk Storage (5.4ms) [0m[32mUploaded file to key: variants/aqr178hjsfeynvgfvxk4zaufd0k5/70c0755c1c91220ffcd22a58068c6d7d59062c9e5a8fe832b6503da60586bda8[0m
+[36m  Disk Storage (1.3ms) [0m[34mGenerated URL for file at key: variants/aqr178hjsfeynvgfvxk4zaufd0k5/70c0755c1c91220ffcd22a58068c6d7d59062c9e5a8fe832b6503da60586bda8 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZZWEZ5TVRjNGFHcHpabVY1Ym5ablpuWjRhelI2WVhWbVpEQnJOUzgzTUdNd056VTFZekZqT1RFeU1qQm1abU5rTWpKaE5UZ3dOamhqTm1RM1pEVTVNRFl5WXpsbE5XRTRabVU0TXpKaU5qVXdNMlJoTmpBMU9EWmlaR0U0QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVJGTkRYekExTkRVdVNsQkhJanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRFVTBOZk1EVTBOUzVLVUVjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDItMDNUMDM6MjM6MDkuOTY0WiIsInB1ciI6ImJsb2Jfa2V5In19--fd01bf26b79b4b88af720a12b4b6610d5a1f9127/DSC_0545.JPG?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22DSC_0545.JPG%22%3B+filename%2A%3DUTF-8%27%27DSC_0545.JPG)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZZWEZ5TVRjNGFHcHpabVY1Ym5ablpuWjRhelI2WVhWbVpEQnJOUzgzTUdNd056VTFZekZqT1RFeU1qQm1abU5rTWpKaE5UZ3dOamhqTm1RM1pEVTVNRFl5WXpsbE5XRTRabVU0TXpKaU5qVXdNMlJoTmpBMU9EWmlaR0U0QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVJGTkRYekExTkRVdVNsQkhJanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRFVTBOZk1EVTBOUzVLVUVjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDItMDNUMDM6MjM6MDkuOTY0WiIsInB1ciI6ImJsb2Jfa2V5In19--fd01bf26b79b4b88af720a12b4b6610d5a1f9127/DSC_0545.JPG?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22DSC_0545.JPG%22%3B+filename%2A%3DUTF-8%27%27DSC_0545.JPG
+Completed 302 Found in 731ms (ActiveRecord: 0.3ms | Allocations: 16445)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dc722278-9853-43f8-afa3-7e7412c09e70]   [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZZWEZ5TVRjNGFHcHpabVY1Ym5ablpuWjRhelI2WVhWbVpEQnJOUzgzTUdNd056VTFZekZqT1RFeU1qQm1abU5rTWpKaE5UZ3dOamhqTm1RM1pEVTVNRFl5WXpsbE5XRTRabVU0TXpKaU5qVXdNMlJoTmpBMU9EWmlaR0U0QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVJGTkRYekExTkRVdVNsQkhJanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRFVTBOZk1EVTBOUzVLVUVjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDItMDNUMDM6MjM6MDkuOTY0WiIsInB1ciI6ImJsb2Jfa2V5In19--fd01bf26b79b4b88af720a12b4b6610d5a1f9127/DSC_0545.JPG?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22DSC_0545.JPG%22%3B+filename%2A%3DUTF-8%27%27DSC_0545.JPG" for ::1 at 2021-02-03 12:18:09 +0900
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dc722278-9853-43f8-afa3-7e7412c09e70]   [1m[36mActiveStorage::Blob Update (1.2ms)[0m  [1m[33mUPDATE `active_storage_blobs` SET `active_storage_blobs`.`metadata` = '{\"identified\":true,\"width\":3096,\"height\":5504,\"analyzed\":true}' WHERE `active_storage_blobs`.`id` = 2[0m
+Processing by ActiveStorage::DiskController#show as 
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"DSC_0545.JPG\"; filename*=UTF-8''DSC_0545.JPG", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDRG9JYTJWNVNTSnJkbUZ5YVdGdWRITXZZWEZ5TVRjNGFHcHpabVY1Ym5ablpuWjRhelI2WVhWbVpEQnJOUzgzTUdNd056VTFZekZqT1RFeU1qQm1abU5rTWpKaE5UZ3dOamhqTm1RM1pEVTVNRFl5WXpsbE5XRTRabVU0TXpKaU5qVXdNMlJoTmpBMU9EWmlaR0U0QmpvR1JWUTZFR1JwYzNCdmMybDBhVzl1U1NKRGFXNXNhVzVsT3lCbWFXeGxibUZ0WlQwaVJGTkRYekExTkRVdVNsQkhJanNnWm1sc1pXNWhiV1VxUFZWVVJpMDRKeWRFVTBOZk1EVTBOUzVLVUVjR093WlVPaEZqYjI1MFpXNTBYM1I1Y0dWSklnOXBiV0ZuWlM5cWNHVm5CanNHVkE9PSIsImV4cCI6IjIwMjEtMDItMDNUMDM6MjM6MDkuOTY0WiIsInB1ciI6ImJsb2Jfa2V5In19--fd01bf26b79b4b88af720a12b4b6610d5a1f9127", "filename"=>"DSC_0545"}
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dc722278-9853-43f8-afa3-7e7412c09e70]   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [dc722278-9853-43f8-afa3-7e7412c09e70] Performed ActiveStorage::AnalyzeJob (Job ID: dc722278-9853-43f8-afa3-7e7412c09e70) from Async(active_storage_analysis) in 827.39ms
+Completed 200 OK in 2ms (ActiveRecord: 0.0ms | Allocations: 1540)
+
+
