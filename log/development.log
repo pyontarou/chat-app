@@ -2970,3 +2970,434 @@ Processing by MessagesController#create as HTML
 Completed 200 OK in 14ms (Views: 7.3ms | ActiveRecord: 1.6ms | Allocations: 16502)
 
 
+Started GET "/rooms/2/messages" for ::1 at 2021-02-03 10:51:33 +0900
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by MessagesController#index as HTML
+  Parameters: {"room_id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 5.4ms | Allocations: 4655)
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/messages/_main_chat.html.erb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:16
+  Rendered collection of messages/_message.html.erb [2 times] (Duration: 0.5ms | Allocations: 196)
+  Rendered messages/_main_chat.html.erb (Duration: 3.9ms | Allocations: 4388)
+  Rendered messages/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 9580)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 17.8ms | ActiveRecord: 2.8ms | Allocations: 35498)
+
+
+Started GET "/rooms/2/messages" for ::1 at 2021-02-03 10:51:36 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"room_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.1ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 1.1ms | Allocations: 1167)
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/messages/_main_chat.html.erb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:16
+  Rendered collection of messages/_message.html.erb [2 times] (Duration: 0.1ms | Allocations: 42)
+  Rendered messages/_main_chat.html.erb (Duration: 2.5ms | Allocations: 2490)
+  Rendered messages/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3793)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 1.2ms | Allocations: 12978)
+
+
+Started GET "/rooms/2/messages" for ::1 at 2021-02-03 10:51:46 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"room_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 1.9ms | Allocations: 1707)
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/messages/_main_chat.html.erb:16
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:16
+  Rendered collection of messages/_message.html.erb [2 times] (Duration: 0.1ms | Allocations: 42)
+  Rendered messages/_main_chat.html.erb (Duration: 3.6ms | Allocations: 2487)
+  Rendered messages/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 4330)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.0ms | ActiveRecord: 2.6ms | Allocations: 14269)
+
+
+Started GET "/rooms/2/messages" for ::1 at 2021-02-03 10:51:47 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"room_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 1.6ms | Allocations: 1352)
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 2[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  Rendered collection of messages/_message.html.erb [2 times] (Duration: 0.5ms | Allocations: 193)
+  Rendered messages/_main_chat.html.erb (Duration: 3.5ms | Allocations: 3015)
+  Rendered messages/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 4904)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 1.2ms | Allocations: 15104)
+
+
+Started DELETE "/" for ::1 at 2021-02-03 10:51:48 +0900
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/" for ::1 at 2021-02-03 10:52:40 +0900
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/" for ::1 at 2021-02-03 10:53:27 +0900
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/" for ::1 at 2021-02-03 10:55:43 +0900
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/" for ::1 at 2021-02-03 10:58:55 +0900
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/" for ::1 at 2021-02-03 11:01:09 +0900
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/" for ::1 at 2021-02-03 11:06:52 +0900
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-02-03 11:07:01 +0900
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 19.2ms | Allocations: 9159)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 20.3ms | Allocations: 9479)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 23.6ms | ActiveRecord: 15.1ms | Allocations: 25920)
+
+
+Started GET "/rooms/new" for ::1 at 2021-02-03 11:07:07 +0900
+Processing by RoomsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering rooms/new.html.erb within layouts/application
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` != 1[0m
+  ↳ app/views/rooms/new.html.erb:21
+  Rendered rooms/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 2094)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 10.8ms | ActiveRecord: 5.6ms | Allocations: 10649)
+
+
+Started POST "/rooms" for ::1 at 2021-02-03 11:07:13 +0900
+Processing by RoomsController#create as HTML
+  Parameters: {"authenticity_token"=>"3NCwsnhUv1DIfdOdIxrU+PJV0bhTEGpY7CHCHv7To4+PZMuBLNq9uoDGNX+Vt3pkNWm6nfNW1Us8vuhFMRVpbQ==", "room"=>{"name"=>"新規チャット", "user_ides"=>["2"], "user_ids"=>["1"]}, "commit"=>"Create Room"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[31mUnpermitted parameter: :user_ides[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1[0m
+  ↳ app/controllers/rooms_controller.rb:11:in `create'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/rooms_controller.rb:12:in `create'
+  [1m[36mRoom Create (3.7ms)[0m  [1m[32mINSERT INTO `rooms` (`name`, `created_at`, `updated_at`) VALUES ('新規チャット', '2021-02-03 02:07:13.866943', '2021-02-03 02:07:13.866943')[0m
+  ↳ app/controllers/rooms_controller.rb:12:in `create'
+  [1m[36mRoomUser Create (0.4ms)[0m  [1m[32mINSERT INTO `room_users` (`room_id`, `user_id`, `created_at`, `updated_at`) VALUES (3, 1, '2021-02-03 02:07:13.872671', '2021-02-03 02:07:13.872671')[0m
+  ↳ app/controllers/rooms_controller.rb:12:in `create'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/rooms_controller.rb:12:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 8.9ms | Allocations: 11737)
+
+
+Started GET "/" for ::1 at 2021-02-03 11:07:13 +0900
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (1.1ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 2.7ms | Allocations: 1200)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1274)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 1.5ms | Allocations: 9669)
+
+
+Started GET "/rooms/1/messages" for ::1 at 2021-02-03 11:07:17 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"room_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/messages_controller.rb:4:in `index'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 1.9ms | Allocations: 1205)
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/views/messages/_main_chat.html.erb:15
+  Rendered collection of messages/_message.html.erb [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered messages/_main_chat.html.erb (Duration: 3.0ms | Allocations: 1701)
+  Rendered messages/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3304)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 12.0ms | ActiveRecord: 5.9ms | Allocations: 18118)
+
+
+Started DELETE "/rooms/1" for ::1 at 2021-02-03 11:07:18 +0900
+Processing by RoomsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RJbBa2SKB67HNr8Ogc1bsEKv7OXeuWj2OP1p/dIsx3S9d/qjJ86Y51NmqZdlfvmIO/XZYO8uk3qcbr6aEy6EAA==", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` WHERE `rooms`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/rooms_controller.rb:20:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/rooms_controller.rb:21:in `destroy'
+  [1m[36mRoomUser Load (0.4ms)[0m  [1m[34mSELECT `room_users`.* FROM `room_users` WHERE `room_users`.`room_id` = 1[0m
+  ↳ app/controllers/rooms_controller.rb:21:in `destroy'
+  [1m[36mRoomUser Destroy (1.6ms)[0m  [1m[31mDELETE FROM `room_users` WHERE `room_users`.`id` = 1[0m
+  ↳ app/controllers/rooms_controller.rb:21:in `destroy'
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`room_id` = 1[0m
+  ↳ app/controllers/rooms_controller.rb:21:in `destroy'
+  [1m[36mRoom Destroy (1.9ms)[0m  [1m[31mDELETE FROM `rooms` WHERE `rooms`.`id` = 1[0m
+  ↳ app/controllers/rooms_controller.rb:21:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/rooms_controller.rb:21:in `destroy'
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 5.5ms | Allocations: 8227)
+
+
+Started GET "/" for ::1 at 2021-02-03 11:07:18 +0900
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mRoom Load (0.2ms)[0m  [1m[34mSELECT `rooms`.* FROM `rooms` INNER JOIN `room_users` ON `rooms`.`id` = `room_users`.`room_id` WHERE `room_users`.`user_id` = 1[0m
+  ↳ app/views/messages/_side_bar.html.erb:11
+  Rendered messages/_side_bar.html.erb (Duration: 1.1ms | Allocations: 1166)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1240)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.6ms | Allocations: 9657)
+
+
